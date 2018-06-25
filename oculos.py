@@ -59,7 +59,7 @@ def tudo():
             final_img = cv2.add(temp, temp2)
 
 
-            cv2.imshow('Lets wear Glasses', final_img)
+            cv2.imshow('Com oculos', final_img)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 exit()
     cv2.imshow('Sem oculos', image)
