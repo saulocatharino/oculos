@@ -9,6 +9,7 @@ def tudo():
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
     eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
     _, image = cap.read()
+    final_img = image.copy() 
 
     glass_img = cv2.imread('oculos.png')
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -59,10 +60,10 @@ def tudo():
             final_img = cv2.add(temp, temp2)
 
 
-            cv2.imshow('Com oculos', final_img)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                exit()
+
     cv2.imshow('Sem oculos', image)
+    cv2.imshow('Com oculos', final_img)
+
     if cv2.waitKey(1) & 0xFF == ord('q'):
         exit()
 
